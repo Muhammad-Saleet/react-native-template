@@ -8,6 +8,7 @@ export function BottomTabs () {
     return (
         <MainTabsNav.Navigator
             initialRouteName="HomeStack"
+            screenOptions={{headerShown: false}}
         >
             <MainTabsNav.Screen
                 name="HomeStack"

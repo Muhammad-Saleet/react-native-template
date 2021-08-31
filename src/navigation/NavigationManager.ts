@@ -43,7 +43,7 @@ export const NavigationManager = {
         return navigationRef.current?.getRootState()
     },
 
-    resetRoot (navigationState: NavigationState) {
+    resetRoot (navigationState: any) {
         navigationRef.current?.resetRoot(navigationState)
     },
 
