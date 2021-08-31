@@ -1,6 +1,7 @@
 import * as React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { HomeStack } from "./HomeStack"
+import {Icon} from "react-native-elements";
 
 export function BottomTabs () {
     const MainTabsNav = createBottomTabNavigator()
@@ -15,13 +16,9 @@ export function BottomTabs () {
                 component={HomeStack}
                 options={{
                     title: "Home",
-                    // tabBarIcon: ({ focused, color, size }) => (
-                    //     <MaterialIcons
-                    //         name="person"
-                    //         size={size}
-                    //         color={color}
-                    //     />
-                    // ),
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name={'code'} type={'material'} color={color} size={size} />
+                    ),
                 }}
             />
         </MainTabsNav.Navigator>
