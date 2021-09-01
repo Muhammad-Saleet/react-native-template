@@ -13,7 +13,7 @@ module.exports = {
 
     rules: {
         indent: ["warn", 4, { SwitchCase: 1 }],
-        'no-shadow': 'warn',
+        'no-shadow': 'error',
         'react/prop-types': 'off',
         'react/display-name': 'off',
         'react/no-children-prop': 'off',
