@@ -19,8 +19,10 @@ module.exports = {
                 alias: {
                     screens: "./src/screens",
                     components: "./src/components",
+                    stacks: "./src/navigation/stacks",
+                    types: "./src/types",
                 },
             },
         ],
     ],
-};
+}

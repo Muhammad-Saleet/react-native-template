@@ -1,21 +1,22 @@
 import * as React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { HomeStack } from "./HomeStack"
-import {Icon} from "react-native-elements";
+import { DevelopmentStack } from "stacks"
+import { Icon } from "react-native-elements"
+import { Routes } from "types"
 
 export function BottomTabs () {
     const MainTabsNav = createBottomTabNavigator()
 
     return (
         <MainTabsNav.Navigator
-            initialRouteName="HomeStack"
-            screenOptions={{headerShown: false}}
+            initialRouteName={Routes.DevelopmentStack}
+            screenOptions={{ headerShown: false }}
         >
             <MainTabsNav.Screen
-                name="HomeStack"
-                component={HomeStack}
+                name={Routes.DevelopmentStack}
+                component={DevelopmentStack}
                 options={{
-                    title: "Home",
+                    title: "Dev",
                     tabBarIcon: ({ color, size }) => (
                         <Icon name={'code'} type={'material'} color={color} size={size} />
                     ),

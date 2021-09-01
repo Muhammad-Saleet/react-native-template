@@ -1,10 +1,10 @@
-import React, {useEffect, useRef} from "react"
+import React, { useEffect, useRef } from "react"
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 import { NavigationManager, navigationRef } from "./NavigationManager"
-import { AuthStack } from "./AuthStack"
+import { AuthStack } from "stacks"
 import { BottomTabs } from "./BottomTabs"
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux"
 
 export function RootNavigator () {
     const token = useSelector((state) => state?.auth?.token)
@@ -29,8 +29,7 @@ export function RootNavigator () {
         }
     }, [token])
 
-
-    async function logScreen () {
+    function logScreen () {
         const currentRoute = navigationRef.current.getCurrentRoute()
         const previousRouteName = routeNameRef.current
         const currentRouteName = currentRoute.name
@@ -56,7 +55,7 @@ export function RootNavigator () {
         >
             <RootStackNav.Navigator
                 initialRouteName="AuthStack"
-                screenOptions={{presentation: "modal"}}
+                screenOptions={{ presentation: "modal" }}
             >
                 <RootStackNav.Screen
                     name="AuthStack"

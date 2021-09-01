@@ -1,2 +1,5 @@
 export * from "./home/HomeView"
 export * from "./login/LoginView"
+export * from "./development/DevelopmentView"
+export * from "./development/ComponentsListView"
+export * from "./development/ComponentView"

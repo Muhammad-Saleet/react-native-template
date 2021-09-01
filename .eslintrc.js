@@ -29,5 +29,18 @@ module.exports = {
         "object-property-newline": ["warn", { allowAllPropertiesOnSameLine: true }],
         "array-bracket-newline": ["error", { multiline: true }],
         "array-element-newline": ["error", "consistent"],
+
+        "@typescript-eslint/ban-ts-comment": 0,
+        "jsx-quotes": "error",
+        "comma-dangle": ["error", "always-multiline"],
+        "object-shorthand": "error",
+        "object-curly-spacing": ["error", "always"],
+        "quote-props": ["error", "as-needed"],
+        semi: ["error", "never", { beforeStatementContinuationChars: "always" }],
+        "no-multi-spaces": "error",
+        "no-tabs": "error",
+        "no-multiple-empty-lines": ["error", { max: 1 }],
+        "no-trailing-spaces": "error",
+        "require-await": "warn",
     },
 }

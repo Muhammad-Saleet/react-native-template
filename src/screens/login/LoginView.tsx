@@ -1,11 +1,11 @@
 import React, { ReactElement } from "react"
 import { useDispatch } from "react-redux"
-import {StyleSheet} from "react-native"
+import { StyleSheet } from "react-native"
 import { Button } from "react-native-elements"
 import { setToken } from "../../redux/slices/authSlice"
-import {SafeAreaView} from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context"
 
-export function LoginView ():ReactElement {
+export function LoginView (props: any):ReactElement {
     const dispatch = useDispatch()
     const handleLogin = () => {
         dispatch(setToken({ token: "fakeToken" }))
