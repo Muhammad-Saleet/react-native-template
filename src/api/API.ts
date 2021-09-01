@@ -1,6 +1,6 @@
 import axiosInstance from './AxiosInstance'
 import { AxiosRequestConfig } from 'axios'
-import { PostCommentType, PostType } from "types"
+import { ListDataFunctionType, PostType } from "types"
 
 export const getPost = async (id: string): Promise<PostType> => {
     const config: AxiosRequestConfig = {
@@ -12,13 +12,33 @@ export const getPost = async (id: string): Promise<PostType> => {
     return response.data
 }
 
-export const getPostComments = async (postId: string): Promise<PostCommentType> => {
+export const listPosts: ListDataFunctionType<PostType> = async ({
+    limit = 0,
+    page = 1,
+}): Promise<{data: Array<PostType>, page: number, limit: number}> => {
     const config: AxiosRequestConfig = {
         method: "get",
-        url: 'comments/',
-        params: { postId },
+        url: "/posts",
+        params: {
+            _page: page,
+            _limit: limit,
+        },
     }
 
     const response = await axiosInstance(config)
+    return { data: response.data, page, limit }
+}
+
+export const updatePost = async (post: PostType): Promise<PostType> => {
+    const config: AxiosRequestConfig = {
+        method: "put",
+        url: `/posts/${post.id}`,
+        data: post,
+    }
+
+    console.log("post: --- ", JSON.stringify(post, null, 2))
+
+    const response = await axiosInstance(config)
+    console.log("response.data: --- ", JSON.stringify(response.data, null, 2))
     return response.data
 }

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { DevelopmentStack } from "stacks"
+import { DevelopmentStack, APIDemoStack } from "stacks"
 import { Icon } from "react-native-elements"
 import { Routes } from "types"
 
@@ -19,6 +19,17 @@ export function BottomTabs () {
                     title: "Dev",
                     tabBarIcon: ({ color, size }) => (
                         <Icon name={'code'} type={'material'} color={color} size={size} />
+                    ),
+                }}
+            />
+
+            <MainTabsNav.Screen
+                name={Routes.APIDemoStack}
+                component={APIDemoStack}
+                options={{
+                    title: "Api",
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name={'api'} type={'material'} color={color} size={size} />
                     ),
                 }}
             />
