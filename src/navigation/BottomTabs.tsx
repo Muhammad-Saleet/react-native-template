@@ -3,9 +3,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { DevelopmentStack, APIDemoStack } from "stacks"
 import { Icon } from "react-native-elements"
 import { Routes } from "types"
+import { useTranslation } from "react-i18next"
 
 export function BottomTabs () {
     const MainTabsNav = createBottomTabNavigator()
+    const { t } = useTranslation()
 
     return (
         <MainTabsNav.Navigator
@@ -16,7 +18,7 @@ export function BottomTabs () {
                 name={Routes.DevelopmentStack}
                 component={DevelopmentStack}
                 options={{
-                    title: "Dev",
+                    title: t("bottomTabsTitles.dev"),
                     tabBarIcon: ({ color, size }) => (
                         <Icon name={'code'} type={'material'} color={color} size={size} />
                     ),
@@ -27,7 +29,7 @@ export function BottomTabs () {
                 name={Routes.APIDemoStack}
                 component={APIDemoStack}
                 options={{
-                    title: "Api",
+                    title: t("bottomTabsTitles.api"),
                     tabBarIcon: ({ color, size }) => (
                         <Icon name={'api'} type={'material'} color={color} size={size} />
                     ),
