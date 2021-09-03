@@ -7,6 +7,7 @@ import { SafeAreaView } from "react-native-safe-area-context"
 
 export function LoginView (props: any):ReactElement {
     const dispatch = useDispatch()
+
     const handleLogin = () => {
         dispatch(setToken({ token: "fakeToken" }))
     }
@@ -14,7 +15,11 @@ export function LoginView (props: any):ReactElement {
     return (
         <SafeAreaView style={styles.container}>
             <Button
-                title={"login"}
+                title={"Login"}
+                onPress={handleLogin}
+            />
+            <Button
+                title={"Skip"}
                 onPress={handleLogin}
             />
         </SafeAreaView>

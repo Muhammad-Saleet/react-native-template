@@ -15,6 +15,8 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
     "@reduxjs/toolkit": "^1.6.1",
+    "@shopify/polaris-tokens": "^3.1.0",
+    "@shopify/restyle": "^1.4.0",
     "@types/react-redux": "^7.1.18",
     "axios": "^0.21.1",
     "axios-mock-adapter": "^1.20.0",

@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 import { NavigationManager, navigationRef } from "./NavigationManager"
 import { AuthStack } from "stacks"
-import { BottomTabs } from "./BottomTabs"
+import { BottomTabs } from "./tabs/BottomTabs"
 import { useSelector } from "react-redux"
 
 export function RootNavigator () {

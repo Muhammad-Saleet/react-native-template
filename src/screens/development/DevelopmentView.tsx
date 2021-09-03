@@ -1,7 +1,8 @@
 import React, { ReactElement } from 'react'
-import { Text, StyleSheet, TouchableOpacity, View } from 'react-native'
+import { Text, StyleSheet, TouchableOpacity } from 'react-native'
 import DeviceInfo from 'react-native-device-info'
 import { Routes } from "types"
+import { View } from "../../components/core/View"
 
 export const DevelopmentView = (props: any): ReactElement => {
     return (
@@ -10,11 +11,12 @@ export const DevelopmentView = (props: any): ReactElement => {
                 style={styles.section}
                 onPress={() => {
                     props.navigation.navigate(Routes.ComponentsListView)
-                }}>
+                }}
+            >
                 <Text style={styles.sectionTitle}>{'Components'}</Text>
             </TouchableOpacity>
 
-            <View style={styles.buildAndVersionContainer}>
+            <View p={4} bg={"background"} borderRadius={'s'} alignItems={"center"} justifyContent={"center"}>
                 <Text style={styles.buildAndVersionItems}>
                     v{DeviceInfo.getVersion()}({DeviceInfo.getBuildNumber()})
                 </Text>

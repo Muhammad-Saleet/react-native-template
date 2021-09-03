@@ -8,4 +8,5 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })
 
+// @ts-ignore
 export type RootState = ReturnType<typeof reducer>
