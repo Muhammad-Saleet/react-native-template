@@ -1,11 +1,12 @@
 import React, { ReactElement, RefObject, useRef } from "react"
 import { useDispatch } from "react-redux"
-import { StyleSheet, TouchableOpacity } from "react-native"
-import { Button, Input } from "react-native-elements"
+import { Input } from "react-native-elements"
 import { setToken } from "../../redux/slices/authSlice"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { Formik, FormikProps } from "formik"
 import * as Yup from "yup"
+import { useTheme } from "../../theme"
+import { Pressable, Text, View } from "components"
 
 interface FormValues {
     email: string,
@@ -15,6 +16,7 @@ interface FormValues {
 
 export function LoginView ():ReactElement {
     const dispatch = useDispatch()
+    const theme = useTheme()
 
     // this can be used to access form state outside <Formik/>
     const formRef: RefObject<FormikProps<FormValues>> = useRef(null)
@@ -44,7 +46,11 @@ export function LoginView ():ReactElement {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={{ flex: 1, paddingHorizontal: theme.spacing["3"] }}>
+            <View alignItems={"center"} justifyContent={"center"}>
+
+            </View>
+
             <Formik
                 innerRef={formRef}
                 initialValues={initialValues}
@@ -85,30 +91,40 @@ export function LoginView ():ReactElement {
                             errorMessage={form.touched.confirmPassword && form.errors.confirmPassword}
                             secureTextEntry={false}
                         />
-                        <Button
-                            title={"Login"}
+
+                        <Pressable
                             onPress={form.handleSubmit}
-                            containerStyle={styles.button}
-                            TouchableComponent={TouchableOpacity}
-                        />
-                        <Button
-                            title={"Skip"}
+                            minHeight={48}
+                            alignItems={"center"}
+                            justifyContent={"center"}
+                            backgroundColor={"surface"}
+                            borderRadius={"m"}
+                            pressedStyleProps={{ opacity: 0.7 }}
+                            my={4}
+                        >
+                            <Text variant={"body"} color={"textCritical"}>
+                                Login
+                            </Text>
+                        </Pressable>
+
+                        <Pressable
                             onPress={fakeLogin}
-                            containerStyle={styles.button}
-                            TouchableComponent={TouchableOpacity}
-                        />
+                            minHeight={48}
+                            alignItems={"center"}
+                            justifyContent={"center"}
+                            backgroundColor={"surface"}
+                            borderRadius={"m"}
+                            pressedStyleProps={{ opacity: 0.7 }}
+                        >
+                            {({ pressed }) => (
+                                <Text variant={"body"} color={"textCritical"}>
+                                    {pressed ? 'Skip >>>' : 'Skip'}
+                                </Text>
+                            )}
+                        </Pressable>
                     </>
                 )}
             </Formik>
         </SafeAreaView>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingHorizontal: 10,
-    },
-    button: { marginVertical: 8 },
-})
-

@@ -8,9 +8,13 @@ import APIProvider from 'api/APIProvider'
 import i18n from "localisation"
 import { ThemeProvider } from "@shopify/restyle"
 import { lightTheme, darkTheme } from "./src/theme"
+import { LogBox } from "react-native"
 
 // keep this or i18n might not get bundled!
 i18n.getDataByLanguage('en')
+
+// ignore warnings
+LogBox.ignoreLogs(["EventEmitter.removeListener('change', ...)"])
 
 const App = () => {
     const [darkMode, setDarkMode] = useState(false)

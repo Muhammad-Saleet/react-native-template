@@ -1,15 +1,13 @@
 import {
     createTheme,
-    TextProps,
-    BoxProps,
     useTheme as useRTheme,
 } from '@shopify/restyle'
 
 const palette = {
     white: "#FFFFFF",
     black: "#000000",
-    lightText: "#FFFFFF",
-    darkText: "#000000",
+    lightGrey: "#FFFFFF",
+    darkGrey: "skyblue",
 }
 
 const fonts = {
@@ -25,77 +23,77 @@ export const lightTheme = createTheme({
         background: palette.black,
 
         // background color in components such as Card, Modal, and Popover.
-        surface: palette.veryLightGray,
+        surface: palette.darkGrey,
 
         // background color in components on surface elements such as search and input fields
-        surfaceField: palette.veryLightGray,
+        surfaceField: palette.darkGrey,
 
         // default border color
-        border: palette.veryLightGray,
+        border: palette.darkGrey,
 
         // color of vertical and horizontal dividers used to separate elements
-        divider: palette.veryLightGray,
+        divider: palette.darkGrey,
 
         // icons fill color
-        icon: palette.veryLightGray,
-        iconPressed: palette.veryLightGray,
-        iconDisabled: palette.veryLightGray,
+        icon: palette.black,
+        iconPressed: palette.darkGrey,
+        iconDisabled: palette.darkGrey,
 
         // text colors
-        text: palette.veryLightGray,
-        textDisabled: palette.veryLightGray,
-        textSubdued: palette.veryLightGray,
+        text: palette.black,
+        textDisabled: palette.darkGrey,
+        textSubdued: palette.darkGrey,
 
         // colors for interactive elements such as links, and indicators of
         // focus and selected states in components such checkboxes and radio buttons
-        interactive: palette.veryLightGray,
-        interactiveDisabled: palette.veryLightGray,
-        focused: palette.darkText,
-        surfaceSelected: palette.darkText,
-        surfacePressed: palette.darkText,
-        iconOnInteractive: palette.darkText,
-        textOnInteractive: palette.darkText,
+        interactive: palette.darkGrey,
+        interactiveDisabled: palette.darkGrey,
+        focused: palette.lightGrey,
+        surfaceSelected: palette.lightGrey,
+        surfacePressed: palette.lightGrey,
+        iconOnInteractive: palette.lightGrey,
+        textOnInteractive: palette.lightGrey,
 
         // colors for secondary and tertiary buttons and interactive elements
-        action: palette.veryLightGray,
-        actionDisabled: palette.veryLightGray,
+        action: palette.darkGrey,
+        actionDisabled: palette.darkGrey,
 
         // primary color for use in primary buttons, navigations tabs, selected surface color, etc..
-        primary: palette.veryLightGray,
-        primaryDisabled: palette.veryLightGray,
-        primaryPressed: palette.veryLightGray,
-        textOnPrimary: palette.lightText,
-        iconOnPrimary: palette.lightText,
+        primary: palette.darkGrey,
+        primaryDisabled: palette.darkGrey,
+        primaryPressed: palette.darkGrey,
+        textOnPrimary: palette.white,
+        iconOnPrimary: palette.white,
 
         // to convey critical/dangerous/error states
-        borderCritical: palette.veryLightGray,
-        borderCriticalSubdued: palette.veryLightGray,
-        borderCriticalDisabled: palette.veryLightGray,
-        iconCritical: palette.lightText,
-        surfaceCritical: palette.lightText,
-        surfaceCriticalSubdued: palette.lightText,
-        textCritical: palette.lightText,
-        interactiveCritical: palette.lightText,
-        interactiveCriticalDisabled: palette.lightText,
-        iconOnCritical: palette.lightText,
-        textOnCritical: palette.lightText,
+        borderCritical: palette.darkGrey,
+        borderCriticalSubdued: palette.darkGrey,
+        borderCriticalDisabled: palette.darkGrey,
+        iconCritical: palette.white,
+        surfaceCritical: palette.white,
+        surfaceCriticalSubdued: palette.white,
+        textCritical: palette.white,
+        interactiveCritical: palette.white,
+        interactiveCriticalDisabled: palette.white,
+        iconOnCritical: palette.white,
+        textOnCritical: palette.white,
 
         // to convey warning states
-        borderWarning: palette.veryLightGray,
-        borderWarningSubdued: palette.veryLightGray,
-        iconWarning: palette.lightText,
-        surfaceWarning: palette.lightText,
-        surfaceWarningSubdued: palette.lightText,
-        textWarning: palette.lightText,
+        borderWarning: palette.darkGrey,
+        borderWarningSubdued: palette.darkGrey,
+        iconWarning: palette.white,
+        surfaceWarning: palette.white,
+        surfaceWarningSubdued: palette.white,
+        textWarning: palette.white,
 
         // to convey success/positive states
-        borderSuccess: palette.veryLightGray,
-        borderSuccessSubdued: palette.veryLightGray,
-        borderSuccessDisabled: palette.veryLightGray,
-        iconSuccess: palette.lightText,
-        surfaceSuccess: palette.lightText,
-        surfaceSuccessSubdued: palette.lightText,
-        textSuccess: palette.lightText,
+        borderSuccess: palette.darkGrey,
+        borderSuccessSubdued: palette.darkGrey,
+        borderSuccessDisabled: palette.darkGrey,
+        iconSuccess: palette.white,
+        surfaceSuccess: palette.white,
+        surfaceSuccessSubdued: palette.white,
+        textSuccess: palette.white,
     },
     spacing: {
         1: 4,
@@ -120,6 +118,11 @@ export const lightTheme = createTheme({
         72: 288,
         80: 320,
         96: 384,
+        // xs: 4,
+        // s: 8,
+        // m: 12,
+        // l: 18,
+        // xl: 24,
     },
     breakpoints: {
         phone: 0,
@@ -136,9 +139,24 @@ export const lightTheme = createTheme({
         default: {},
         header: {
             fontFamily: fonts.primary,
-            color: palette.darkText,
+            fontWeight: 'bold',
+            fontSize: 34,
+            lineHeight: 42.5,
+            color: 'text',
         },
-        pressedText: { color: palette.lightText },
+        subheader: {
+            fontFamily: fonts.primary,
+            fontWeight: '600',
+            fontSize: 28,
+            lineHeight: 36,
+            color: 'text',
+        },
+        body: {
+            fontFamily: fonts.primary,
+            fontSize: 16,
+            lineHeight: 24,
+            color: 'text',
+        },
     },
 })
 export const darkTheme = createTheme({ ...lightTheme })
