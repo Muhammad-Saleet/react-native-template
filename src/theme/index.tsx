@@ -11,10 +11,8 @@ const palette = {
 }
 
 const fonts = {
-    primary: "PTSerif",
-    primaryBold: "PTSerifBold",
-    primaryItalic: "PTSerifItalic",
-    primaryBoldItalic: "PTSerifBoldItalic",
+    primary: undefined,
+    primaryBold: undefined,
 }
 
 export const lightTheme = createTheme({

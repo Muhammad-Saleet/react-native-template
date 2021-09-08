@@ -42,6 +42,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ItxiRNTemplate/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABFE59519B596E51CEFDCCC0 /* libPods-ItxiRNTemplate-ItxiRNTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ItxiRNTemplate-ItxiRNTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A881CF5CF3F2B244570E2A /* Pods-ItxiRNTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItxiRNTemplate.debug.xcconfig"; path = "Target Support Files/Pods-ItxiRNTemplate/Pods-ItxiRNTemplate.debug.xcconfig"; sourceTree = "<group>"; };
+		CEE4B53226E66A460037BE2C /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = ../../src/assets/fonts/MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		CEE4B53326E66A470037BE2C /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = ../../src/assets/fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-ItxiRNTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItxiRNTemplate.release.xcconfig"; path = "Target Support Files/Pods-ItxiRNTemplate/Pods-ItxiRNTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				CEE4B52D26E665E60037BE2C /* Fonts */,
 				13B07FAE1A68108700A75B9A /* ItxiRNTemplate */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ItxiRNTemplateTests */,
@@ -137,6 +140,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CEE4B52D26E665E60037BE2C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4B53226E66A460037BE2C /* MaterialCommunityIcons.ttf */,
+				CEE4B53326E66A470037BE2C /* MaterialIcons.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +157,6 @@
 				6C97AB639B58BBB4B15BBE30 /* Pods-ItxiRNTemplate-ItxiRNTemplateTests.debug.xcconfig */,
 				1D0AE47A65C8663E3B452821 /* Pods-ItxiRNTemplate-ItxiRNTemplateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -485,6 +496,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9X7PMZK7H6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ItxiRNTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9X7PMZK7H6;
 				INFOPLIST_FILE = ItxiRNTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
